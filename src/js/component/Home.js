@@ -57,19 +57,23 @@ const Home = () => {
                     <div>
                         <form>
                             {todos.map((todo, index) => (
-                                <li key={index}>
-                                    <h3>{todo}</h3>
-                                    <div className="d-flex justify-content-end">
-                                        <button className="btn btn-danger"
-                                            onClick={() => handleDelete(index)}>
-                                            <i className="fa fa-solid fa-trash"></i>
-                                        </button>
-                                    </div>
-                                </li>
+                                <div className="mt-3">
+                                    <input
+                                        key={index}
+                                        className="form-control"
+                                        type="text"
+                                        value={todo}
+                                        readOnly>
+
+                                    </input>
+
+                                    <button className="btn btn-success d-flex justify-content-end"
+                                        onClick={() => handleDelete(index)}> Done
+                                        <i class="fa fa-solid fa-circle-check"></i>
+                                    </button>
+                                </div>
                             )
                             )}
-
-
                         </form>
                     </div>
                 </div>
